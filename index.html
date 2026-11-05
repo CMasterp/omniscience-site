@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omniscience, l’audit de votre travail puis son automatisation</title>
+  <meta name="description" content="Omniscience observe une période de travail choisie, avec votre accord, pour repérer les tâches répétées, puis les confie à une équipe d’agents IA conçue pour vous. Les données restent sur votre ordinateur.">
+  <meta name="theme-color" content="#EDF0EC">
+  <link rel="icon" href="img/omniscience-favicon-32.svg" type="image/svg+xml">
+  <link rel="icon" href="img/omniscience-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="img/omniscience-logo-color.svg" alt="Omniscience, accueil" width="184" height="24"></a>
+      <nav class="nav" aria-label="Principale">
+        <ul>
+          <li><a href="#etapes">Fonctionnement</a></li>
+          <li><a href="#snitch">Snitch</a></li>
+          <li><a href="#confidentialite">Confidentialité</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero wrap" aria-labelledby="titre">
+      <div class="hero-text">
+        <h1 id="titre">Comprendre comment vous travaillez, puis vous retirer ce qui se répète.</h1>
+        <p class="lead">Omniscience fait l’audit de l’activité d’une personne ou d’une équipe pendant une période que vous choisissez, puis automatise les tâches répétées avec une équipe d’agents IA conçue pour vous.</p>
+        <p class="actions">
+          <a class="button" href="mailto:peurinceu@vihintoh.bj?subject=Demande%20d%E2%80%99audit">Demander un audit</a>
+          <a href="#snitch">Voir ce que Snitch enregistre</a>
+        </p>
+      </div>
+      <figure class="event">
+        <figcaption>Un événement de niveau&nbsp;1, tel que Snitch l’enregistre sur votre ordinateur&nbsp;: l’application, le projet, la durée. Pas le nom du fichier, pas son contenu.</figcaption>
+<pre><code>{
+  <span class="k">"schema_version"</span>: 1,
+  <span class="k">"id"</span>: "5f0c2e6a-8b1d-4c3e-9a7f-2d4b6e8c1a90",
+  <span class="k">"ts"</span>: "2026-11-04T09:12:00Z",
+  <span class="k">"duration_s"</span>: 720,
+  <span class="k">"kind"</span>: "gesture",
+  <span class="k">"source"</span>: "window",
+  <span class="k">"action"</span>: "focus",
+  <span class="k">"target"</span>: "Visual Studio Code",
+  <span class="k">"context"</span>: {
+    <span class="k">"bundle_id"</span>: "com.microsoft.VSCode",
+    <span class="k">"title"</span>: "site"
+  },
+  <span class="k">"sensitivity"</span>: 1
+}</code></pre>
+      </figure>
+    </section>
+
+    <section id="etapes" class="section" aria-labelledby="etapes-titre">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="etapes-titre">Trois étapes, dans cet ordre</h2>
+          <p>Omniscience est un projet en construction. La première étape existe aujourd’hui&nbsp;: c’est Snitch. Les deux suivantes sont en préparation.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Observer, avec votre accord</h3>
+            <p>Pendant une période que vous fixez, une semaine par exemple, Snitch enregistre sur votre machine vos gestes (applications, durées, absences) et vos résultats (commits, revues, réunions). Vous activez chaque capteur et choisissez le niveau de détail.</p>
+            <p><span class="status status-done">Disponible&nbsp;: Snitch 0.1.0</span></p>
+          </li>
+          <li>
+            <h3>Comprendre</h3>
+            <p>À la fin de la période, un récapitulatif montre comment se répartit votre temps et quelles tâches reviennent d’une semaine à l’autre. C’est l’audit.</p>
+            <p><span class="status">En préparation</span></p>
+          </li>
+          <li>
+            <h3>Automatiser</h3>
+            <p>Omniscience vous propose une équipe d’agents IA, dirigée par un agent chef, pour reprendre ces tâches. Vous décidez lesquelles lui confier.</p>
+            <p><span class="status">En préparation</span></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="snitch" class="section" aria-labelledby="snitch-titre">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="snitch-titre">Snitch, le module de collecte</h2>
+          <p>Snitch enregistre des événements, retire ce qui est sensible et les range dans une base SQLite sur votre ordinateur. Il n’analyse rien et n’envoie rien.</p>
+        </div>
+
+        <ul class="facts">
+          <li>Fonctionne sous macOS et Windows. Linux viendra ensuite.</li>
+          <li>S’installe en une commande, sans droits d’administrateur.</li>
+          <li>Lit GitHub (commits, PR, revues, issues) et votre agenda (Google Agenda ou fichier ICS) en lecture seule, si vous les activez.</li>
+          <li>Un tableau de bord local pour voir vos données, les filtrer, mettre en pause et effacer.</li>
+          <li>Pas encore distribué publiquement&nbsp;: écrivez-nous pour l’essayer.</li>
+        </ul>
+
+        <h3 class="levels-title">Trois niveaux de détail, choisis par vous</h3>
+        <p class="levels-intro">Exemple&nbsp;: vous modifiez pendant 12&nbsp;minutes le fichier <code>index.html</code> du projet <code>site</code> dans VS Code. Voici ce que chaque niveau en garde.</p>
+        <div class="levels">
+          <article class="level">
+            <div class="level-name">
+              <h4>Niveau&nbsp;1, métadonnées</h4>
+              <p><span class="status status-done">Livré, version 0.1.0</span></p>
+            </div>
+            <p>L’application active, un titre de fenêtre réduit, les durées, les absences, les métadonnées GitHub et agenda (le nombre de participants, pas le titre de la réunion). Au premier lancement, seules la fenêtre active et l’inactivité sont enregistrées.</p>
+            <p class="level-example"><code>Visual Studio Code, projet site, 12 min</code></p>
+          </article>
+          <article class="level">
+            <div class="level-name">
+              <h4>Niveau&nbsp;2, contenu léger</h4>
+              <p><span class="status">En cours</span></p>
+            </div>
+            <p>En plus&nbsp;: les URL, les commandes, les noms de fichiers, les titres de PR, de tickets et de réunions. Les secrets sont masqués avant l’écriture&nbsp;: jetons, mots de passe, clés, et adresses e-mail si vous le demandez.</p>
+            <p class="level-example"><code>+ fichier index.html</code></p>
+          </article>
+          <article class="level">
+            <div class="level-name">
+              <h4>Niveau&nbsp;3, contenu complet</h4>
+              <p><span class="status">Prévu</span></p>
+            </div>
+            <p>En plus&nbsp;: des captures d’écran périodiques et le texte qu’elles contiennent (OCR), traités sur votre machine, avec un flou sur les zones sensibles quand c’est possible.</p>
+            <p class="level-example"><code>+ capture d’écran et texte lu</code></p>
+          </article>
+        </div>
+
+        <h3 class="never-title">Ce que Snitch ne fait à aucun niveau</h3>
+        <ul class="never">
+          <li>Il n’enregistre pas vos frappes au clavier et n’accède ni au micro ni à la caméra.</li>
+          <li>Il n’utilise aucune API non officielle&nbsp;: pas d’aspiration de WhatsApp, LinkedIn ou Facebook.</li>
+          <li>Il n’envoie aucune donnée à Omniscience.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="confidentialite" class="section" aria-labelledby="confidentialite-titre">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="confidentialite-titre">Vos données restent sur votre ordinateur</h2>
+          <p>Snitch est conçu pour être compatible avec le RGPD&nbsp;: il ne collecte que ce que le niveau choisi autorise, rien sans votre accord, et vous effacez vous-même ce que vous voulez.</p>
+        </div>
+        <ul class="controls">
+          <li>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="16" height="11" x="4" y="5" rx="1.5"/><path d="M2 19.5h20"/><circle cx="12" cy="10.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <h3>Stockage local</h3>
+            <p>Les événements sont écrits dans une base SQLite de votre dossier personnel, protégée par les droits de votre compte. Le tableau de bord tourne sur votre machine. Les seules connexions réseau de Snitch vont aux API que vous activez (GitHub, Google Agenda), en lecture.</p>
+          </li>
+          <li>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12.5 9.5 17 19 7.5"/></svg>
+            <h3>Consentement</h3>
+            <p>Chaque capteur et chaque niveau demandent votre accord. Quand vous baissez le niveau, le tableau de bord propose d’effacer ce qui le dépasse.</p>
+          </li>
+          <li class="control-pause">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M9 6v12m6-12v12"/></svg>
+            <h3>Pause</h3>
+            <p>La collecte s’arrête jusqu’à ce que vous la repreniez, depuis le tableau de bord ou avec <code>snitch resume</code>.</p>
+          </li>
+          <li class="control-stop">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="12" height="12" x="6" y="6" rx="2"/></svg>
+            <h3>Arrêt total</h3>
+            <p>Le bouton toujours visible du tableau de bord, ou <code>snitch stop</code>, arrête la collecte en moins d’une demi-seconde. Avec <code>--wipe</code>, toutes les données sont effacées.</p>
+          </li>
+          <li>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 7h16M9.5 7V4.5h5V7m-8 0 1 13h9l1-13"/></svg>
+            <h3>Effacement</h3>
+            <p>Effacez une période ou tout l’historique. L’effacement est réel dans la base. Les copies faites par vos sauvegardes (Time Machine, historique des fichiers) restent à votre charge&nbsp;: excluez-en le dossier de Snitch.</p>
+          </li>
+          <li>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="10" x="3" y="7" rx="3"/><circle cx="8" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>
+            <h3>Ce site</h3>
+            <p>Il ne dépose aucun cookie, ne contient aucun outil de mesure d’audience et ne charge aucune ressource d’un autre site. Les polices sont hébergées ici.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact dark" aria-labelledby="contact-titre">
+      <div class="wrap">
+        <h2 id="contact-titre">Demander un audit</h2>
+        <p>Omniscience prépare ses premiers audits. Décrivez votre activité, ou celle de votre équipe, et les tâches qui vous prennent du temps. Nous répondons par e-mail. Il n’y a pas de formulaire&nbsp;: votre message part de votre propre messagerie.</p>
+        <p class="actions">
+          <a class="button" href="mailto:peurinceu@vihintoh.bj?subject=Demande%20d%E2%80%99audit">Écrire un e-mail</a>
+          <span>peurinceu@vihintoh.bj</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer dark">
+    <div class="wrap">
+      <img src="img/omniscience-logo-color-dark.svg" alt="Omniscience" width="144" height="19">
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="#confidentialite">Confidentialité</a></li>
+        <li><a href="mailto:peurinceu@vihintoh.bj">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,526 @@
+/* Site vitrine Omniscience. Couleurs, tailles et espaces : tokens.css (charte brand/). */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/atkinson-hyperlegible-next-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/atkinson-hyperlegible-next-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/atkinson-hyperlegible-mono-latin-400-normal.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-calque);
+  color: var(--color-encre);
+  font-family: var(--font-sans);
+  font-size: var(--size-md);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(var(--size-xl), 2.4vw + 1rem, var(--size-3xl));
+  max-width: 22ch;
+}
+
+h3 {
+  font-size: var(--size-lg);
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 0;
+}
+
+p {
+  max-width: 62ch;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.94em;
+}
+
+a {
+  color: var(--color-vert-de-gris);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-vert-de-gris);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 74rem;
+  margin-inline: auto;
+  padding-inline: max(var(--space-4), 4vw);
+}
+
+.skip {
+  position: absolute;
+  left: var(--space-4);
+  top: -10rem;
+  z-index: 1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-encre);
+  color: var(--color-feuille);
+  border-radius: var(--radius-sm);
+}
+
+.skip:focus {
+  top: var(--space-4);
+}
+
+/* En-tête */
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-8);
+  padding-block: var(--space-6);
+}
+
+.brand {
+  display: inline-block;
+  padding-block: var(--space-2);
+}
+
+.brand img {
+  width: 11.5rem;
+  height: auto;
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.nav a {
+  display: inline-block;
+  padding-block: var(--space-3);
+  color: var(--color-encre);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+
+.section {
+  padding-block: clamp(var(--space-12), 8vw, var(--space-24));
+  border-top: 1px solid var(--color-trait);
+}
+
+.section-head {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.section-head p {
+  color: var(--color-graphite);
+  font-size: var(--size-lg);
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--color-vert-de-gris);
+  color: var(--color-feuille);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+/* Statut d'une étape ou d'un niveau : livré, en cours, prévu. */
+.status {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-graphite);
+  border-radius: var(--radius-pilule);
+  color: var(--color-graphite);
+  font-size: var(--size-sm);
+  line-height: 1.3;
+}
+
+.status-done {
+  border-color: var(--color-encre);
+  background: var(--color-encre);
+  color: var(--color-feuille);
+}
+
+/* Pied de page et bande sombre */
+
+.dark {
+  background: var(--color-encre);
+  color: var(--color-calque);
+}
+
+.dark a {
+  color: var(--color-vert-de-gris-clair);
+}
+
+.dark :focus-visible {
+  outline-color: var(--color-vert-de-gris-clair);
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-block: var(--space-12);
+}
+
+.site-footer img {
+  width: 9rem;
+  height: auto;
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  display: inline-block;
+  padding-block: var(--space-2);
+}
+
+/* Page de texte (mentions légales) */
+
+.prose {
+  display: grid;
+  gap: var(--space-4);
+  padding-block: var(--space-12) var(--space-24);
+}
+
+.prose h1 {
+  font-size: clamp(var(--size-2xl), 3vw + 1rem, var(--size-3xl));
+  margin-bottom: var(--space-4);
+}
+
+.prose h2 {
+  margin-top: var(--space-8);
+  font-size: var(--size-xl);
+}
+
+.prose ul {
+  padding-left: var(--space-6);
+}
+
+/* Accueil : la proposition et un vrai événement */
+
+.hero {
+  display: grid;
+  gap: var(--space-12);
+  align-items: end;
+  padding-block: var(--space-12) clamp(var(--space-12), 8vw, var(--space-24));
+}
+
+.hero h1 {
+  font-size: clamp(var(--size-2xl), 4vw + 1rem, var(--size-4xl));
+  letter-spacing: -0.015em;
+  max-width: 17ch;
+}
+
+.lead {
+  margin-top: var(--space-6);
+  font-size: var(--size-lg);
+  color: var(--color-graphite);
+  max-width: 46ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.event {
+  margin: 0;
+  padding: var(--space-6);
+  background: var(--color-feuille);
+  border: 1px solid var(--color-trait);
+  border-radius: var(--radius-md);
+}
+
+.event figcaption {
+  color: var(--color-graphite);
+  font-size: var(--size-sm);
+  margin-bottom: var(--space-4);
+}
+
+.event pre {
+  margin: 0;
+  font-size: var(--size-sm);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.event .k {
+  color: var(--color-graphite);
+}
+
+@media (min-width: 60rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    padding-top: var(--space-16);
+  }
+}
+
+/* Trois étapes : une vraie séquence, d'où la numérotation. */
+
+.steps {
+  display: grid;
+  gap: var(--space-12) var(--space-8);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  padding-top: var(--space-6);
+  border-top: 2px solid var(--color-encre);
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  font-size: var(--size-3xl);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (min-width: 52rem) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Snitch */
+
+.facts,
+.never {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: var(--space-6);
+}
+
+.facts {
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 52rem) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-12);
+  }
+}
+
+.levels-title,
+.never-title {
+  font-size: var(--size-xl);
+}
+
+.levels-intro {
+  margin-top: var(--space-4);
+  color: var(--color-graphite);
+}
+
+.levels {
+  margin-block: var(--space-8) var(--space-16);
+  background: var(--color-feuille);
+  border: 1px solid var(--color-trait);
+  border-radius: var(--radius-md);
+}
+
+.level {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.level + .level {
+  border-top: 1px solid var(--color-trait);
+}
+
+.level-name {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+}
+
+.level h4 {
+  margin: 0;
+  font-size: var(--size-lg);
+  line-height: 1.2;
+}
+
+.level-example code {
+  color: var(--color-graphite);
+}
+
+@media (min-width: 60rem) {
+  .level {
+    grid-template-columns: 15rem minmax(0, 1fr) 15rem;
+    gap: var(--space-8);
+  }
+}
+
+.never {
+  margin-top: var(--space-4);
+}
+
+/* Confidentialité : chaque contrôle avec son icône de la charte. */
+
+.controls {
+  display: grid;
+  gap: var(--space-8) var(--space-12);
+  padding: 0;
+  list-style: none;
+}
+
+.controls li {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  align-content: start;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.controls svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.controls p {
+  grid-column: 2;
+}
+
+.control-pause svg,
+.control-pause h3 {
+  color: var(--color-ambre);
+}
+
+.control-stop svg,
+.control-stop h3 {
+  color: var(--color-brique);
+}
+
+@media (min-width: 52rem) {
+  .controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .controls {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Contact */
+
+.contact {
+  border-bottom: 1px solid var(--color-graphite);
+}
+
+.contact .wrap {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: clamp(var(--space-12), 8vw, var(--space-24));
+}
+
+.contact p {
+  font-size: var(--size-lg);
+}
+
+.contact .actions {
+  margin-top: 0;
+}
+
+.dark .button {
+  background: var(--color-vert-de-gris-clair);
+  color: var(--color-encre);
+  overflow-wrap: anywhere;
+}
